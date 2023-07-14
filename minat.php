@@ -12,7 +12,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])){
     #Jika tindakan adalah 'add'
     if($action == 'add'){
         #Semak jika item sudah ada dalam senarai minat
-        $sql = "SELECT FROM minat WHERE idpengguna = $idpengguna AND iditem = $iditem LIMIT 1";
+        $sql = "SELECT * FROM minat WHERE idpengguna = $idpengguna AND iditem = $iditem LIMIT 1";
         $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>".mysqli_error($db));
 
         # Jika item ditemui dalam database

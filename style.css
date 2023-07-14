@@ -56,3 +56,7 @@ input:focus, textarea:focus{
 .button:hover{
     background: linear-gradient(pink,lightpink);
 }
+
+a{
+    color: #333;
+}

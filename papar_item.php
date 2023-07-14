@@ -38,10 +38,10 @@ if(mysqli_num_rows($result)>0){
         }
     echo "<table width='100%' border='1' cellspacing='0' cellpadding='10'>
     <tr>
-        <td align='center' valign='top' width='30%'>$img<br>$harga</td>
+        <td align='center' valign='top' width='30%'>$img<br>RM$harga</td>
     <td>
         <h2>$kategori - $name</h2>
-        <p>$detail</p>
+        <p style='white-space: pre-line;' >$detail</p>
         <h5>Maklumat</h5>
         <ul>
         <li>$label_b1: $banding1</li>

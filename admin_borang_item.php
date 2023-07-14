@@ -40,30 +40,30 @@ echo "<script>alert('ID tidak ditemui.');</script>";
 # Semak nilai POST daripada borang
 if(isset($_POST['name']) && !empty($_POST['name'])){
 
-$name = mysqli_real_escape_string($db, $_POST['name']);
-$detail = mysqli_real_escape_string($db, $_POST['detail']);
-$harga = $_POST['harga'];
-$idkategori = $_POST['idkategori'];
-$banding1 = $_POST['banding1'];
-$banding2 = $_POST['banding2'];
-$banding3 = $_POST['banding3'];
+    $name = mysqli_real_escape_string($db, $_POST['name']);
+    $detail = mysqli_real_escape_string($db, $_POST['detail']);
+    $harga = $_POST['harga'];
+    $idkategori = $_POST['idkategori'];
+    $banding1 = $_POST['banding1'];
+    $banding2 = $_POST['banding2'];
+    $banding3 = $_POST['banding3'];
 
-# Proses data mengikut mode borang, Edit atau Tambah rekod
-if($edit_data){
+    # Proses data mengikut mode borang, Edit atau Tambah rekod
+    if($edit_data){
 
-$sql = "UPDATE item SET namaitem='$name', detail='$detail',
-banding1='$banding1', banding2='$banding2', banding3='$banding3',
-idkategori '$idkategori', harga='$harga' WHERE iditem=$id";
+        $sql = "UPDATE item SET namaitem='$name', detail='$detail',
+        banding1='$banding1', banding2='$banding2', banding3='$banding3',
+        idkategori='$idkategori', harga='$harga' WHERE iditem=$id";
 
-}else{
+    }else{
 
-    $sql = "INSERT INTO item (namaitem, detail, banding1, banding2, banding3, harga, idkategori)
-    VALUES ('$name', '$detail', '$banding1', '$banding2', '$banding3', '$harga', '$idkategori')";
-}
-$result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($db));
-echo "<script>alert('Item berjaya disimpan.');
-window.location.replace('admin_senarai_item.php');
-</script>";
+        $sql = "INSERT INTO item (namaitem, detail, banding1, banding2, banding3, harga, idkategori)
+        VALUES ('$name', '$detail', '$banding1', '$banding2', '$banding3', '$harga', '$idkategori')";
+    }
+    $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($db));
+    echo "<script>alert('Item berjaya disimpan.');
+    window.location.replace('admin_senarai_item.php');
+    </script>";
 }
 # Terima fail upload gambar item
 if(isset($_FILES['gambar']) && $edit_data){
@@ -94,7 +94,7 @@ if(!empty($oldname)){
 $newname='item_'.$id.'.'.$file_ext;
 move_uploaded_file($file_tmp, $location.$newname);
 # Simpan nama gambar baru ke pangkalan data
-$sql = "UPDATE item SET gambar='$newname! WHERE iditem=$id";
+$sql = "UPDATE item SET gambar='$newname' WHERE iditem=$id";
 $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($db));
     echo "<script>
     alert('Imej item berjaya disimpan.');

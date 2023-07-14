@@ -61,7 +61,7 @@ if(count($compare) == 0){
     <tr>
         <th width='200'>Item</th>
         <th>$label_b1</th><th>$label_b2</th><th>$label_b3</th>
-        <th width='200'>Detail</th>
+        <th width='500'>Detail</th>
     </tr>";
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $id = $row['iditem'];

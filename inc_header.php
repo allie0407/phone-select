@@ -60,7 +60,7 @@ include('inc_settings.php');
 <!--hantar parameter kawal saiz teks (nilai diterima oleh kod dalam inc_function.php)-->
 Saiz Teks:<br>
 <a class='button' href='?font=plus'>+</a>|<a class='button' href='?font=minus'>-</a>
-<a href='font=reset'>Reset</a>
+<a href='?font=reset'>Reset</a>
 <hr>
 <a href='javascript:void(0);'onclick='window.print()'>Cetak Halaman</a><br>
 <a href='javascript:void(0);'onclick='printcontent("printcontent")'>Cetak Kandungan</a>

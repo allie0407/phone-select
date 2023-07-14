@@ -16,6 +16,9 @@ Bandingkan telefon pintar di portal ini sebelum anda membeli.
     $result=mysqli_query($db,$sql)OR die("Ralat:<pre>$sql</pre>".mysqli_error($db));
 
     if(mysqli_num_rows($result)>0){
+
+        echo"<table class='column' width=30%' border='1' cellspacing='0' cellpadding='4'>";
+
         while($row=mysqli_fetch_array($result)){
             $iditem=$row['iditem'];
             $name=$row['namaitem'];
@@ -27,11 +30,13 @@ Bandingkan telefon pintar di portal ini sebelum anda membeli.
             }else{
                 $img="";
             }
-            echo"<table class='column' width=30%' border='1' cellspacing='0' cellpadding='4'>
-            <tr><td align='center'>
+            
+            echo "<tr><td align='center'>
             <strong>$name</strong><br>$img<br><a class='button' href='papar_item.php?id=$iditem'>Lihat</a>
-            </td></tr></table>";
+            </td></tr>";
         }
+
+        echo "</table>";
     }else{
         echo"Item belum dimasukkan.";
     }
