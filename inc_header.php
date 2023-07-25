@@ -11,10 +11,10 @@ include('inc_settings.php');
         *{font-size: <?php echo $fontsize; ?>%;}
     </style>
 </head>
-<body background='gambar/Pink.png'>
+<body>
 
-<table width='100%' align='center' style='height: 100%;' cellpading='10' cellspacing='0' border='1' background=''>
-<tr background=''>
+<table width='100%' align='center' style='height: 100%; background: #F4F2DE;' cellpading='10' cellspacing='0' border='1' >
+<tr style='background-image: url(gambar/Banner.png); background-repeat: no-repeat; background-size: cover;'>
     <td align='center' valign='middle' colspan='2' style='height: 100px;'>
         <h1 style='font-size:40px'><?php echo $portal_name; ?></h1>
     </td>
@@ -22,7 +22,7 @@ include('inc_settings.php');
 
 <tr>
 <!-- menu --> 
-<td width='15%' valign='top' align='center'>
+<td width='15%' valign='top' align='center' style='background:;'>
     <?php
     # Semak jika ada item dalam session senarai banding, paparkan kiraan item
     if(!empty($_SESSION['compare'])){?>
@@ -39,18 +39,18 @@ include('inc_settings.php');
     if($_SESSION['level']=='visitor'){
     ?>
         <!-- menu ini dipaparkan kepada pengguna yang belum log masuk akaun -->
-        <a class='mainmenu' href='login.php' style='background: pink;'>Log Masuk</a><br>
-        <a class='mainmenu' href='daftar.php' style='background: pink;'>Daftar</a><br>
+        <a class='mainmenu' href='login.php' style='background: lightgrey;'>Log Masuk</a><br>
+        <a class='mainmenu' href='daftar.php' style='background: lightgrey;'>Daftar</a><br>
         <?php
         }else{
         ?>
         <!--menu ini dipaparkan kepada pengguna yang sudah log masuk akaun-->
-            <a class='mainmenu' href='logout.php' style='background:pink;'>Log Keluar</a><br>
+            <a class='mainmenu' href='logout.php' style='background: lightgrey;'>Log Keluar</a><br>
         <?php
         }
         if($_SESSION['level']=='admin'){?>
             <!--menu ini dipaparkan kepada admin sahaja-->
-            <h3>Menu Admin</h3>
+            <h3><u>Menu Admin</u></h3>
             <a class='mainmenu' href='admin_senarai_item.php'>Urus Item</a><br>
             <a class='mainmenu' href='admin_borang_item.php'>Tambah Item</a><br>
             <a class='mainmenu' href='admin_senarai_kategori.php'>Urus</a><br>
@@ -66,4 +66,6 @@ Saiz Teks:<br>
 <a href='javascript:void(0);'onclick='printcontent("printcontent")'>Cetak Kandungan</a>
 </td>
         
-<td width='80%' valign='top'id='printcontent'>
+<td width='100%' valign='top' id='printcontent'>
+<div style='margin-left: 100px;'>
+<div>

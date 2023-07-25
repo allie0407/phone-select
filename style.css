@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .row{
     width: 100%;
@@ -12,24 +12,24 @@ body{
     clear: both;
 }
 .column{
-    float: left;
-    margin: 6px;
+    float: center;
+    margin: 10px;
 }
 td{
     vertical-align: top;
 }
 input, textarea, select{
-    border: 2px solid#0c95fe;
+    border: 2px solid#A1CCD1;
     border-radius: 8px;
 }
 input:focus, textarea:focus{
-    background-color: aliceblue;
+    background-color: #A1CCD1;
 }
 .mainmenu{
     display: block;
     width: 200px;
     height: 25px;
-    background: #2baaff;
+    background: #A1CCD1;
     padding: 2px;
     text-align: center;
     border-radius: 10px;
@@ -40,10 +40,10 @@ input:focus, textarea:focus{
     text-decoration: none;
 }
 .mainmenu:hover{
-    background: linear-gradient(pink,lightpink);
+    background: linear-gradient(#7C9D96,#7C9D96);
 }
 .button{
-    background: #147ce3;
+    background:#7C9D96;
     padding: 4px;
     text-align: center;
     border-radius: 5px;
@@ -54,7 +54,7 @@ input:focus, textarea:focus{
     text-decoration: none;
 }
 .button:hover{
-    background: linear-gradient(pink,lightpink);
+    background: linear-gradient(#A1CCD1,#A1CCD1);
 }
 
 a{

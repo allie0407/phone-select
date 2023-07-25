@@ -32,17 +32,17 @@ if(mysqli_num_rows($result)>0){
         $banding3= $row['banding3'];
         
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100%'>";
+            $img="<img src='gambar/item/$gambar' width='200' height='255'>";
         }else{
             $img="Tiada imej.";
         }
     echo "<table width='100%' border='1' cellspacing='0' cellpadding='10'>
     <tr>
-        <td align='center' valign='top' width='30%'>$img<br>RM$harga</td>
+        <td align='center' valign='middle' width='30%'>$img<br>RM$harga</td>
     <td>
-        <h2>$kategori - $name</h2>
+        <h2><u>$kategori - $name</u></h2>
         <p style='white-space: pre-line;' >$detail</p>
-        <h5>Maklumat</h5>
+        <h5><u>Maklumat</u></h5>
         <ul>
         <li>$label_b1: $banding1</li>
         <li>$label_b2: $banding2</li>

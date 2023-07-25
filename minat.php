@@ -45,7 +45,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])){
     }
 }
 ?>
-<h2>Senarai Minat</h2>
+<h2>Senarai Minat &#10084</h2>
 <p>Simpan item yang anda minat di sini untuk mudah rujuk dan beli di masa hadapan.<br>
 Senarai Minat akan kekal di dalam akaun anda walaupun sudah Log Keluar daripada portal ini.</p>
 <?php

@@ -30,13 +30,13 @@ if(isset($_POST['username'])&& isset($_POST['password'])){
 ?>
 <table width='400' height='100%' align='center'>
     <tr><td align='center'>
-        <h2>Log Masuk</h2>
+        <br><h2>Log Masuk</h2>
         <p>Jika anda belum mempunyai akaun, klik <a href='daftar.php'>Daftar</a>.</p>
         <form method="POST" action=''>
             <label>Username</label><br>
-            <input type="text" name="username" required><br><br>
+            <input type="text" name="username" required autocomplete="off"><br><br>
             <label>Password</label><br>
-            <input type="password" name="password" required><br><br>
+            <input type="password" name="password" required autocomplete="off"><br><br>
             <input type="submit" name="" value="Log Masuk">
 </form>
 </td><tr>

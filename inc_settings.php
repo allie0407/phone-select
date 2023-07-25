@@ -1,6 +1,6 @@
 <?php
 # Nama sistem, dipaparkan di header dan title pelayar web
-$portal_name='- Choose Your Phone -';
+$portal_name='Choose Your Phone';
 
 # Maklumat pangkalan data
 $dbname='phoneselect';

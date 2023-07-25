@@ -64,7 +64,7 @@ if(isset($_FILES["import"])){
 ?>
 <form method="POST" action="">
     <p>
-        <label for='name'>Nama<?php echo $label_cat;?></label><br>
+        <br><label for='name'>Tambah <?php echo $label_cat;?></label><br>
         <input type='text' name='name' id='name' value='<?php echo $name;?>'><br>
 </p>
 <p><input type="submit" value="Simpan"></p>

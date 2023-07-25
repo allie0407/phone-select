@@ -1,6 +1,6 @@
-</td></tr>
+</div></div></td></tr>
 <!--footer-->
-<tr><td colspan="2" align="center" height="20" bgcolor="#147ce3">Copyright © Chong Wei Xin 2023</td></tr>
+<tr><td colspan="2" align="center" height="20" bgcolor="#7C9D96">Copyright © Chong Wei Xin 2023</td></tr>
 </table>
 <script type="text/javascript">
     //skrip untuk cetak bahagian khas kandungan sahaja

@@ -98,7 +98,7 @@ if(mysqli_num_rows($result)>0){
         $banding3 = $row['banding3'];
 
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100%'>";
+            $img="<img src='gambar/item/$gambar' width='100' height='100'>";
         }else{
             $img = "";
         }
@@ -118,7 +118,7 @@ if(mysqli_num_rows($result)>0){
         $harga = $row['harga'];
 
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100%'>";
+            $img="<img src='gambar/item/$gambar' width='100' height='100'>";
         }else{
             $img="Tiada gambar.";
         }

@@ -48,7 +48,8 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])){
 <?php
 # Kira item dalam senarai banding. Jika tiada item paparkan mesej masih kosong
 if(count($compare) == 0){
-    echo "<h5>Senarai Banding masih kosong. <br> Pilih beberapa item dan masukkan ke Senarai Banding untuk buat perbandingan.</h5>";
+    echo "<h5>Senarai Banding masih kosong.<br>
+    Pilih beberapa item dan masukkan ke Senarai Banding untuk buat perbandingan.</h5>";
 }else{
     # Jika sudah ada item. Gabungkan semua iditem menjadi string (untuk kegunaan dalam sql query'in')
     $idlist = implode(',',$compare);

@@ -16,7 +16,7 @@ if(isset($_GET['delete'])&& is_numeric($_GET['delete'])){
     die();
 }
 ?>
-<a class='button' href="admin_borang_kategori.php">Tambah <?php echo $label_cat;?> Baru</a><br><br>
+<br><a class='button' href="admin_borang_kategori.php">Tambah <?php echo $label_cat;?> Baru &#10133</a><br><br>
 <?php
 # Query senaraikan kategori dan bilangan item yang ada dalam kategori tersebut
 $sql="SELECT kategori.*,COUNT(item.iditem) as jumlahitem FROM kategori

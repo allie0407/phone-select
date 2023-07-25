@@ -33,7 +33,7 @@ if(isset($_GET['delete'])&& is_numeric($_GET['delete'])){
     }
 }
 ?>
-<a class='button' href="admin_borang_item.php">Tambah Item</a><br><br>
+<br><a class='button' href="admin_borang_item.php">Tambah Item &#10133</a><br><br>
 <?php
 $sql="SELECT item.*,kategori.namakategori as namakategori FROM item
 LEFT JOIN kategori on item.idkategori=kategori.idkategori ORDER BY iditem DESC";
@@ -44,11 +44,11 @@ $total=mysqli_num_rows($result);
 # Counter untuk nombor bilangan di table
 $counter=1;
 if($total>0){
-    echo"Jumlah:$total<br>";
+    echo"Jumlah Item: $total<br>";
     echo"<table width='100%' align='center' border='1' cellpadding='4' cellspacing='0'>
     <tr>
-    <td width='50'>No.</td>
-    <td width='200'>Nama</td>
+    <td width='10'>No.</td>
+    <td width='100'>Nama</td>
     <td width='100'>$label_cat</td>
     <td width='200'>Gambar</td>
     <td width='100'>Edit</td>
@@ -63,7 +63,7 @@ if($total>0){
 
         # Jika imej ada nilai, paparkan imej, jika tidak, paparkan 'Tiada'
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100'>";
+            $img="<img src='gambar/item/$gambar' width='110' height='140'>";
         }else{
             $img="Tiada.";
         }
@@ -71,7 +71,7 @@ if($total>0){
         <td>$counter</td>
         <td>$name</td>
         <td>$kategori</td>
-        <td>$img</td>
+        <td valign='middle'>$img</td>
         <td>
         <a href='admin_borang_item.php?id=$id'>Edit</a> -
         <a href='javascript:void(0);' onclick='deletethis($id)'>Buang</a>

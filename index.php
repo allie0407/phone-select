@@ -4,10 +4,12 @@ include('inc_header.php');
 ?>
 
 <h2>Pengguna Bijak Faedahnya Banyak!</h2>
-Bandingkan telefon pintar di portal ini sebelum anda membeli.
+<p>Bandingkan telefon pintar di portal ini sebelum anda membeli.</p>
 <hr>
 <h2>Item Terkini di Portal Ini</h2>
-<div class='row'>
+<p>Lihat semua item <a href='senarai_item.php'>di sini.</a></p>
+<hr>
+
     <?php
     # Dapatkan item terkini untuk dipaparkan
     $sql="SELECT item.*,kategori.namakategori as kategori FROM item 
@@ -17,7 +19,7 @@ Bandingkan telefon pintar di portal ini sebelum anda membeli.
 
     if(mysqli_num_rows($result)>0){
 
-        echo"<table class='column' width=30%' border='1' cellspacing='0' cellpadding='4'>";
+        echo"<table class='column' width='fit' border='1' cellspacing='0' cellpadding='20'>";
 
         while($row=mysqli_fetch_array($result)){
             $iditem=$row['iditem'];
@@ -26,14 +28,14 @@ Bandingkan telefon pintar di portal ini sebelum anda membeli.
             $gambar=$row['gambar'];
 
             if(!empty($gambar)){
-                $img="<img src='gambar/item/$gambar' width='100'>";
+                $img="<img src='gambar/item/$gambar' width='160' height='200'>";
             }else{
                 $img="";
             }
             
-            echo "<tr><td align='center'>
-            <strong>$name</strong><br>$img<br><a class='button' href='papar_item.php?id=$iditem'>Lihat</a>
-            </td></tr>";
+            echo "<td align='center'>
+            <strong>$kategori $name</strong><br><br>$img<br><br><a class='button' href='papar_item.php?id=$iditem'>Lihat</a>
+            </td>";
         }
 
         echo "</table>";
@@ -41,9 +43,7 @@ Bandingkan telefon pintar di portal ini sebelum anda membeli.
         echo"Item belum dimasukkan.";
     }
     ?>
-    </div>
-    <hr>
-    Lihat semua item <a href='senarai_item.php'>di sini.</a>
+
     <?php
     
     # Panggil kandungan fail:

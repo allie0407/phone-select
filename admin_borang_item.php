@@ -106,22 +106,22 @@ $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($
     }
 }
 ?>
-<a class='button' href="admin_senarai_item.php">Ke Senarai Item</a> <br><br>
+<br><a class='button' href="admin_senarai_item.php">Ke Senarai Item &#10145</a> <br><br>
 <table align='center' width='100%' border='1' cellspacing='0' cellpadding='5'>
     <tr>
         <td valign='top'>
         <form method='POST' action=''>
         <p>
             <label>Nama Item</label><br>
-            <input type='text' name='name' value='<?php echo $name; ?>' required>
+            <input type='text' name='name' value='<?php echo $name; ?>' required autocomplete="off">
         </p>
         <p>
             <label>Maklumat Detail</label><br>
-            <textarea type='text' name='detail' rows="6" cols="30"><?php echo $detail; ?></textarea>
+            <textarea type='text' name='detail' rows="6" cols="30" autocomplete="off"><?php echo $detail; ?></textarea>
         </p>
         <p>
             <label>Harga</label><br>
-            <input type='number' name='harga' value='<?php echo $harga; ?>' step="0.01" min="0.01" max="50000">
+            <input type='number' name='harga' value='<?php echo $harga; ?>' step="0.01" min="0.01" max="50000" autocomplete="off">
         </p>
         <p>
             <label><?php echo $label_cat; ?> item</label><br>
@@ -149,15 +149,15 @@ $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($
         <h3>Kriteria Perbandingan</h3>
         <p>
             <label><?php echo $label_b1; ?></label><br>
-            <input type='text' name='banding1' value='<?php echo $banding1; ?>'><br>
+            <input type='text' name='banding1' value='<?php echo $banding1;  ?>' autocomplete="off"><br>
         </p>
         <p>
             <label><?php echo $label_b2; ?></label><br>
-            <input type='text' name='banding2' value='<?php echo $banding2; ?>'><br>
+            <input type='text' name='banding2' value='<?php echo $banding2; ?>' autocomplete="off"><br>
         </p>
         <p>
             <label><?php echo $label_b3; ?></label><br>
-            <input type='text' name='banding3' value='<?php echo $banding3; ?>'><br>
+            <input type='text' name='banding3' value='<?php echo $banding3; ?>' autocomplete="off"><br>
         </p>
         <p>
             <input type="submit" value="Simpan">

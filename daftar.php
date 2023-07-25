@@ -69,13 +69,13 @@ if(isset($_POST['signup'])){
 <table width='500' height='100%' align='center'>
     <tr>
     <td align='center'>
-    <h2>Daftar Akaun</h2>
+    <br><h2>Daftar Akaun</h2>
     <p>Jika anda sudah mempunyai akaun, klik <a href='login.php'>Log Masuk</a></p>
     <form method='POST' action="">
     <label>Nama</label><br>
-    <input type="text" name="name" value='<?php echo $name; ?>' required><br><br> <label>Username</label><br>
-    <input type="text" name="username" value='<?php echo $username; ?>' required><br><br>
-    <label>Katalaluan</label><br> <input type="password" name="password" value='<?php echo $password; ?>' required><br><br>
+    <input type="text" name="name" value='<?php echo $name; ?>' required autocomplete="off"><br><br> <label>Username</label><br>
+    <input type="text" name="username" value='<?php echo $username; ?>' required autocomplete="off"><br><br>
+    <label>Password</label><br> <input type="password" name="password" value='<?php echo $password; ?>' required autocomplete="off"> <br><br>
     <input type="submit" name='signup' value="Daftar">
     </form>
     </td>
