@@ -33,7 +33,7 @@ if(isset($_GET['delete'])&& is_numeric($_GET['delete'])){
     }
 }
 ?>
-<br><a class='button' href="admin_borang_item.php">Tambah Item &#10133</a><br><br>
+<a class='button' href="admin_borang_item.php">Tambah Item &#10133</a><br><br>
 <?php
 $sql="SELECT item.*,kategori.namakategori as namakategori FROM item
 LEFT JOIN kategori on item.idkategori=kategori.idkategori ORDER BY iditem DESC";
@@ -48,8 +48,8 @@ if($total>0){
     echo"<table width='100%' align='center' border='1' cellpadding='4' cellspacing='0'>
     <tr>
     <td width='10'>No.</td>
-    <td width='100'>Nama</td>
     <td width='100'>$label_cat</td>
+    <td width='100'>Nama</td>
     <td width='200'>Gambar</td>
     <td width='100'>Edit</td>
     </tr>";
@@ -69,8 +69,8 @@ if($total>0){
         }
         echo"<tr>
         <td>$counter</td>
-        <td>$name</td>
         <td>$kategori</td>
+        <td>$name</td>
         <td valign='middle'>$img</td>
         <td>
         <a href='admin_borang_item.php?id=$id'>Edit</a> -

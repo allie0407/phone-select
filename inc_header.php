@@ -5,6 +5,7 @@ include('inc_settings.php');
 <html>
 <head>
     <title><?php echo $portal_name; ?></title>
+    <!-- <h1 class='glow'>Choose Your Phone</h1> -->
     <link rel='stylesheet' href='style.css'>
     <style>
         /* style khas untuk kawal saiz teks pilihan pengguna */
@@ -14,24 +15,24 @@ include('inc_settings.php');
 <body>
 
 <table width='100%' align='center' style='height: 100%; background: #F4F2DE;' cellpading='10' cellspacing='0' border='1' >
-<tr style='background-image: url(gambar/Banner.png); background-repeat: no-repeat; background-size: cover;'>
-    <td align='center' valign='middle' colspan='2' style='height: 100px;'>
-        <h1 style='font-size:40px'><?php echo $portal_name; ?></h1>
+<tr style='background-image: url(gambar/Banner.png); background-position: center; background-size: cover;'>
+    <td align='center' colspan='2' style='height: 100px;'>
     </td>
 </tr>
 
 <tr>
 <!-- menu --> 
-<td width='15%' valign='top' align='center' style='background:;'>
+<td width='14%' align='center' 
+style='background-image: url(gambar/Menu.png); background-repeat: no-repeat; background-attachment: fixed'>
     <?php
     # Semak jika ada item dalam session senarai banding, paparkan kiraan item
     if(!empty($_SESSION['compare'])){?>
-    <a class='button' href='banding.php'>Banding (<?php echo count($_SESSION['compare'])."/".$compare_limit;?>)</a>
+    <a class='button' href='banding.php' style=margin-top:12px;>Banding (<?php echo count($_SESSION['compare'])."/".$compare_limit;?>)</a>
     <hr>
     <?php } ?>
 
     <!-- menu ini dipaparkan kepada semua pengguna -->
-    <br><a class='mainmenu' href='index.php'>Laman Utama</a><br>
+    <a class='mainmenu' href='index.php' style=margin-top:12px;>Laman Utama</a><br>
     <a class='mainmenu' href='senarai_item.php'>Senarai item</a><br>
     <a class='mainmenu' href='banding.php'>Senarai Banding</a><br>
     <a class='mainmenu' href='minat.php'>Senarai Minat</a><br>
@@ -39,33 +40,34 @@ include('inc_settings.php');
     if($_SESSION['level']=='visitor'){
     ?>
         <!-- menu ini dipaparkan kepada pengguna yang belum log masuk akaun -->
-        <a class='mainmenu' href='login.php' style='background: lightgrey;'>Log Masuk</a><br>
-        <a class='mainmenu' href='daftar.php' style='background: lightgrey;'>Daftar</a><br>
+        <a class='mainmenu' href='login.php'>Log Masuk</a><br>
+        <a class='mainmenu' href='daftar.php'>Daftar</a><br>
+
         <?php
         }else{
         ?>
         <!--menu ini dipaparkan kepada pengguna yang sudah log masuk akaun-->
-            <a class='mainmenu' href='logout.php' style='background: lightgrey;'>Log Keluar</a><br>
+            <a class='mainmenu' href='logout.php'>Log Keluar</a><br>
         <?php
         }
         if($_SESSION['level']=='admin'){?>
             <!--menu ini dipaparkan kepada admin sahaja-->
-            <h3><u>Menu Admin</u></h3>
-            <a class='mainmenu' href='admin_senarai_item.php'>Urus Item</a><br>
-            <a class='mainmenu' href='admin_borang_item.php'>Tambah Item</a><br>
-            <a class='mainmenu' href='admin_senarai_kategori.php'>Urus</a><br>
-            <a class='mainmenu' href='admin_borang_kategori.php'>Tambah <?php echo $label_cat;?></a><br>
+            <hr><h3 style='color:#2a2a2a;'><u>Menu Admin</u></h3>
+            <a class='mainmenu-admin' href='admin_senarai_item.php'>Urus Item</a><br>
+            <a class='mainmenu-admin' href='admin_borang_item.php'>Tambah Item</a><br>
+            <a class='mainmenu-admin' href='admin_senarai_kategori.php'>Urus Jenama</a><br>
+            <a class='mainmenu-admin' href='admin_borang_kategori.php'>Tambah <?php echo $label_cat;?></a><br>
     <?php } ?>
  <hr>
 <!--hantar parameter kawal saiz teks (nilai diterima oleh kod dalam inc_function.php)-->
-Saiz Teks:<br>
+<p style='color:2a2a2a;'>Saiz Teks:</p>
 <a class='button' href='?font=plus'>+</a>|<a class='button' href='?font=minus'>-</a>
 <a href='?font=reset'>Reset</a>
 <hr>
-<a href='javascript:void(0);'onclick='window.print()'>Cetak Halaman</a><br>
-<a href='javascript:void(0);'onclick='printcontent("printcontent")'>Cetak Kandungan</a>
-</td>
-        
-<td width='100%' valign='top' id='printcontent'>
-<div style='margin-left: 100px;'>
+<pre><a href='javascript:void(0);' onclick='window.print()'>Cetak Halaman</a><br>
+<a href='javascript:void(0);' onclick='printcontent("printcontent")'>Cetak Kandungan</a><br>
+</td></pre>
+
+<td width='100%' id='printcontent'>
 <div>
+<div style='margin-left: 15px; margin-right: 15px; margin-top: 15px; margin-bottom: 15px;'>

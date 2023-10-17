@@ -1,5 +1,5 @@
 <?php
-# Panggil kandungan fail;
+# Panggil kandungan fail:
 include('inc_header.php');
 
 # Berikan nilai awal untuk borang carian
@@ -18,28 +18,29 @@ if(isset($_POST['search'])){
     } 
     if(!empty($_POST['max_harga']) && is_numeric($_POST['max_harga'])){
         $max_harga = $_POST['max_harga'];
-        $q="harga<=$max_harga AND";
+        $q.="harga<=$max_harga AND ";
     }
     if(!empty($_POST['idkategori']) && is_numeric($_POST['idkategori'])){
         $item_kategori = $_POST['idkategori'];
-        $q="item.idkategori = $item_kategori AND ";
-    if(!empty($q)){
-    $q="WHERE $q iditem >0";
+        $q.="item.idkategori = $item_kategori AND ";
+    }
+        if(!empty($q)){
+    $q="WHERE $q iditem > 0";
     }
 }
 #Semak jika ada parameter 'layout' di URL, untuk tentukan jenis susun atur item.
 if(isset($_GET['layout']) && $_GET['layout'] == 'table'){
-    $layout='table';
+    $layout = 'table';
 }else{
     $layout = 'grid';
 }
 ?>
-<h2>Semua Item</h2>
+<h2><u>Semua Item</u></h2>
 <p>Susunan mengikut item terkini yang dimasukkan ke dalam portal ini didahulukan.</p>
 <div align='center'>
 <form method='POST' action=''>
 <select name='idkategori'>
-<option value=''selected>Kategori</option>
+<option value=''selected>Jenama</option>
 <?php
 $sql = "SELECT * FROM kategori ORDER BY namakategori";
 $result = mysqli_query($db,$sql);
@@ -48,7 +49,7 @@ while ($kategori = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $kategori_id = $kategori['idkategori'];
     $kategori_name = $kategori['namakategori'];
     
-    if($kategori_id=$item_kategori){
+    if($kategori_id==$item_kategori){
         $selected="selected";
     }else{
         $selected = "";
@@ -57,14 +58,13 @@ while ($kategori = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 }
 ?>
 </select>
-<input type='text' name='item_name' value='<?php echo $item_name; ?>' placeholder='Nama item'><br>
-<input type='number' name='min_harga' value='<?php echo $min_harga; ?>' placeholder='Harga minima'>
-<input type='number' name='max_harga' value='<?php echo $max_harga; ?>'placeholder='Harga maksima' size='8'>
-<br>
-<input type='submit' name='search' value='Cari'> <input type='submit' name='reset' value='Reset'>
+<input type='text' name='item_name' value='<?php echo $item_name; ?>' placeholder='Nama Item' autocomplete='off'>
+<input type='number' name='min_harga' value='<?php echo $min_harga; ?>' placeholder='Harga Minima'>
+<input type='number' name='max_harga' value='<?php echo $max_harga; ?>'placeholder='Harga Maksima' size='8'>
+<pre><input type='submit' name='search' value='Cari'> <input type='submit' name='reset' value='Reset'></pre>
 </form>
 </div>
-Paparan: <a href='?layout=grid'>Grid</a>-<a href='?layout=table'>Jadual</a>
+Paparan: <a href='?layout=grid'>Grid</a> / <a href='?layout=table'>Jadual</a>
 <hr>
 <div class='row'>
 <?php
@@ -84,52 +84,56 @@ if(mysqli_num_rows($result)>0){
     if($layout=='table'){
         #Paparan senarai item dalam bentuk jadual
         echo "<table width='100%' border='1' cellspacing='0' cellpadding='2'>
-        <tr><td width='40'></td><td>Item</td><td>Harga</td>
+        <tr><td width='150'>Gambar</td><td>Item</td><td>Harga</td>
         <td>$label_b1</td><td>$label_b2</td><td>$label_b3</td>
-        <td></td></tr>";
+        </tr>";
 
         foreach($items as $row){
         $id = $row['iditem'];
-        $name = $row['namaltem'];
+        $kategori = $row['kategori'];
+        $name = $row['namaitem'];
         $gambar = $row['gambar'];
         $harga = $row['harga'];
-        $banding1 = $row['banding 1'];
+        $banding1 = $row['banding1'];
         $banding2 = $row['banding2'];
         $banding3 = $row['banding3'];
 
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100' height='100'>";
+            $img="<img src='gambar/item/$gambar' width='100' height='125'>";
         }else{
             $img = "";
         }
 
-        echo "<tr><td>$img</td><td>$name</td><td>RM$harga</td>
+        echo "<tr><td align='center'><br>$img<br><a class='button' href='papar_item.php?id=$id'>Lihat</a></td>
+        <td>$kategori $name</td><td>RM$harga</td>
         <td>$banding1</td><td>$banding2</td><td>$banding3</td>
-        <td width='50'><a class='button' href='papar_item.php?id=$id'>Lihat</a></td>
         </tr>";
     }
     echo "</table>";
 
     }elseif($layout=='grid'){
-        # Paparan senarai item dalam bentuk grid foreach($items as $row){
+        # Paparan senarai item dalam bentuk grid
+        ?>
+        <div class='grid'>
+            <?php
+        foreach($items as $row){
         $id= $row['iditem'];
+        $kategori = $row['kategori'];
         $name = $row['namaitem'];
         $gambar = $row['gambar'];
         $harga = $row['harga'];
 
         if(!empty($gambar)){
-            $img="<img src='gambar/item/$gambar' width='100' height='100'>";
+            $img="<img src='gambar/item/$gambar' width='140' height='180'>";
         }else{
             $img="Tiada gambar.";
         }
-        echo "<table class='column' width='31%' border='1' cellspacing='0' cellpadding='4'>
-        <tr><td align='center' valign='top'>
-            <h5>$name</h5>$img<br>RM$harga<br><a class='button' href='papar_item.php?id=$id>Lihat</a>
-        </td></tr>
-        </table>";
+        
+        echo
+            "<div class='phone-container'><b>$kategori</b><br><strong>$name</strong><pre>$img</pre>RM$harga<br>
+            <a class='button' href='papar_item.php?id=$id'>Lihat</a></div>";
+        }
     }
-}
-
 }else{
     echo "Tiada item ditemui.";
 } 

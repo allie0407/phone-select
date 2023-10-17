@@ -36,11 +36,11 @@ if(mysqli_num_rows($result)>0){
         }else{
             $img="Tiada imej.";
         }
-    echo "<table width='100%' border='1' cellspacing='0' cellpadding='10'>
+    echo "<table width='100%' border='1' cellspacing='0' cellpadding='10' style=background:#F6F3D4;>
     <tr>
-        <td align='center' valign='middle' width='30%'>$img<br>RM$harga</td>
+        <td align='center' valign='middle' width='30%'>$img<br><br>RM$harga</td>
     <td>
-        <h2><u>$kategori - $name</u></h2>
+        <h2><u>$kategori  $name</u></h2>
         <p style='white-space: pre-line;' >$detail</p>
         <h5><u>Maklumat</u></h5>
         <ul>
@@ -59,7 +59,7 @@ if(mysqli_num_rows($result)>0){
     </table>";
     }  
 }else{
-    echo "Item tidak ditemui.";
+    echo "<p>Item tidak ditemui.</p>";
 }
 ?>
 

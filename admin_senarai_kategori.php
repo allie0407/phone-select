@@ -16,7 +16,7 @@ if(isset($_GET['delete'])&& is_numeric($_GET['delete'])){
     die();
 }
 ?>
-<br><a class='button' href="admin_borang_kategori.php">Tambah <?php echo $label_cat;?> Baru &#10133</a><br><br>
+<a class='button' href="admin_borang_kategori.php">Tambah <?php echo $label_cat;?> Baru &#10133</a><br><br>
 <?php
 # Query senaraikan kategori dan bilangan item yang ada dalam kategori tersebut
 $sql="SELECT kategori.*,COUNT(item.iditem) as jumlahitem FROM kategori
@@ -26,7 +26,7 @@ $total=mysqli_num_rows($result);
 
 if($total>0){
     echo"Jumlah:$total<br>";
-    echo"<table width='100%' align='center' border='1' cellpadding='4' cellspacing='0'>
+    echo"<table width=100% align='center' border='1' cellpadding='4' cellspacing='0'>
     <tr>
     <th>$label_cat</td>
     <th width='20%' align='right'></td>
@@ -37,7 +37,7 @@ if($total>0){
         $name=$row['namakategori'];
         $jumlahitem=$row['jumlahitem'];
         echo"<tr>
-        <td>$name($jumlahitem item)</td>
+        <td>$name ($jumlahitem item)</td>
         <td align='right'>
         <a href='admin_borang_kategori.php?id=$id'>Edit</a>-
         <a href='javascript:void(0);'onclick='deletethis($id)'>Buang</a>

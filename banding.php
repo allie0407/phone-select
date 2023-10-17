@@ -44,7 +44,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])){
     }
 }
 ?>
-<h2>Senarai Banding</h2>
+<h2><u>Senarai Banding</u></h2>
 <?php
 # Kira item dalam senarai banding. Jika tiada item paparkan mesej masih kosong
 if(count($compare) == 0){
@@ -80,14 +80,14 @@ if(count($compare) == 0){
         $img = "Tiada.";
     }
     echo "<tr><td align='center'>
-    $name<br>$img<br>RM $harga<br>
+    $kategori<br>$name<br>$img<br>RM $harga<br>
     <a class='button' href='papar_item.php?id=$id'>Lihat Detail</a><br><br>
     <a class='button' href='https://www.google.com/search?q=buy+$name_for_url'target='_blank'>Beli Online</a>
     <br><br>
     <a class='button' href='banding.php?id=$id&action=remove'>Buang Dari Senarai</a>
     </td>
     <td>$banding1</td><td>$banding2</td><td>$banding3</td>
-    <td>$detail</td>
+    <td style='white-space: pre-line;'>$detail</td>
     </tr>";
     }
 echo "</table>";

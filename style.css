@@ -1,8 +1,10 @@
 body{
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
 }
+
 .row{
     width: 100%;
 }
@@ -15,48 +17,170 @@ body{
     float: center;
     margin: 10px;
 }
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+.phone-container {
+    width: 280;
+    height: 320;
+    text-align: center;
+    background-color: #F6F3D4;
+    border: 2px solid #1A202C;
+    border-radius: 8px;
+    padding: 5px;
+}
+
 td{
     vertical-align: top;
 }
 input, textarea, select{
-    border: 2px solid#A1CCD1;
-    border-radius: 8px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-family: Inter, sans-serif;
+    font-size: medium;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    outline: none;
 }
 input:focus, textarea:focus{
-    background-color: #A1CCD1;
+    background-color: #ededed;
+    border: 2px solid black;
+    border-radius: 6px;
+   
 }
-.mainmenu{
-    display: block;
-    width: 200px;
-    height: 25px;
-    background: #A1CCD1;
-    padding: 2px;
-    text-align: center;
-    border-radius: 10px;
-    color: rgb(22,22,22);
-    font-weight: bold;
-    line-height: 25px;
-    box-shadow: rgba(0,0,0,0.2) 0 3px 3px 0;
+
+.mainmenu{   
+    align-items: center;
+    background: #FFFFFF;
+    border: 0 solid #222222;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 40px;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 10px;
     text-decoration: none;
+    width: 150;
+    margin: 7px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: medium;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
 }
+
 .mainmenu:hover{
-    background: linear-gradient(#7C9D96,#7C9D96);
+    background: linear-gradient(#3C8476,#3C8476);
+    color: white;
 }
-.button{
-    background:#7C9D96;
-    padding: 4px;
-    text-align: center;
-    border-radius: 5px;
-    color: black;
-    font-weight: bold;
-    line-height: 25px;
-    box-shadow: rgba(0,0,0,0.2) 0 1px 0 0;
+
+.mainmenu-admin{
+    align-items: center;
+    background: #e7e0cc;
+    border: 0 solid #222222;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 40px;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 10px;
     text-decoration: none;
+    width: 150;
+    margin: 7px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: medium;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+}
+
+.mainmenu-admin:hover{
+    background: linear-gradient(#876447,#876447);
+    color: white;
+}
+
+
+.button{
+    align-items: center;
+    background: #FFFFFF;
+    border: 0 solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 30px;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 10px;
+    text-decoration: none;
+    width: auto;
+    margin: 7px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: medium;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 .button:hover{
-    background: linear-gradient(#A1CCD1,#A1CCD1);
+    background: linear-gradient(#7C9D96,#7C9D96);
+    color: rgb(243 244 246);
 }
 
 a{
-    color: #333;
+    color: #2a2a2a;
 }
+
+a:hover{
+    color: rgb(0, 0, 0);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #F4F2DE; 
+
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ccc; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

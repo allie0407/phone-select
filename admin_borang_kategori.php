@@ -63,9 +63,9 @@ if(isset($_FILES["import"])){
 }
 ?>
 <form method="POST" action="">
-    <p>
-        <br><label for='name'>Tambah <?php echo $label_cat;?></label><br>
-        <input type='text' name='name' id='name' value='<?php echo $name;?>'><br>
+    <p style='margin-top: 18px'>
+        <label for='name'>Tambah <?php echo $label_cat;?></label><br>
+        <input type='text' name='name' id='name' value='<?php echo $name;?>' autocomplete="off"><br>
 </p>
 <p><input type="submit" value="Simpan"></p>
 </form>
@@ -76,8 +76,8 @@ if(!$edit_data){
     ?>
     <h3>Import Senarai <?php echo $label_cat;?></h3>
     <p>
-        Cipta satu fail txt atau csv yang mengandungi senarai nama<?php echo $label_cat;?> sahaja.<br>
-        Setiap<?php echo $label_cat;?> diletakkan di baris beasingan.
+        Cipta satu fail txt atau csv yang mengandungi senarai <?php echo $label_cat;?> sahaja.<br>
+        Setiap <?php echo $label_cat;?> diletakkan di baris beasingan.
 </p>
 <p>
     Contoh fail: <?php echo $label_cat;?>.csv<br>
@@ -89,7 +89,7 @@ if(!$edit_data){
 </p>
 <form method="POST" action="" enctype="multipart/form-data">
     <p>
-        <label for='import'>Pilih fail senarai nama<?php echo $label_cat;?></label><br>
+        <label for='import'>Pilih fail senarai <?php echo $label_cat;?></label><br>
         <input type="file" name='import' id='import'>
 </p>
 <p><input type="submit" value="Simpan"></p>

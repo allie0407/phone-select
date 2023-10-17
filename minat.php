@@ -45,9 +45,10 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])){
     }
 }
 ?>
-<h2>Senarai Minat &#10084</h2>
-<p>Simpan item yang anda minat di sini untuk mudah rujuk dan beli di masa hadapan.<br>
+<h2><u>Senarai Minat &#128156</u></h2>
+<p>Simpan item yang anda minat di sini untuk mudah rujuk dan beli pada masa hadapan.<br>
 Senarai Minat akan kekal di dalam akaun anda walaupun sudah Log Keluar daripada portal ini.</p>
+
 <?php
 
 # Dapatkan semua rekod minat, data item dan kategori yang berkaitan
@@ -60,8 +61,8 @@ if(mysqli_num_rows($result)>0){
     echo "<table width='100%' align='center' border='1' cellspacing='0' cellpadding='3' >
     <tr>
         <th width='200'>Item</th>
-        <th>$label_b1</th><th>$label_b2</th><th>$label_b3</th>
-        <th width='200'>Detail</th>
+        <th width='200'>$label_b1</th><th width='200'>$label_b2</th><th width='200'>$label_b3</th>
+        <th>Detail</th>
     </tr>";
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $id = $row['iditem'];
@@ -75,19 +76,19 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $gambar = $row['gambar'];
 
     if(!empty($gambar)){
-        $img="<img src='gambar/item/$gambar' width='100'>";
+        $img="<img src='gambar/item/$gambar' width='100' height='130'>";
     }else{
         $img = "Tiada.";
     }
     echo "<tr>
     <td align='center'>
-    $name<br>$img<br>RM $harga<br>
-    <a class='button' href='papar_item.php?id=$id'>Lihat Detail</a><br><br>
-    <a class='button' href='https://www.google.com/search?q=buy+$name_for_url' target='_blank'>Beli Online</a><br><br>
+    <br><b>$kategori<br>$name</b><br>$img<br>RM $harga<br>
+    <a class='button' href='papar_item.php?id=$id'>Lihat Detail</a><br>
+    <a class='button' href='https://www.google.com/search?q=buy+$name_for_url' target='_blank'>Beli Online</a><br>
     <a class='button' href='minat.php?id=$id&action=remove'>Buang Dari Senarai</a>
     </td>
     <td>$banding1</td><td>$banding2</td><td>$banding3</td>
-    <td>$detail</td>
+    <td style='white-space: pre-line;'>$detail</td>
     </tr>";
 }
     echo "</table>";

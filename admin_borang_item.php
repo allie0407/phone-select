@@ -106,7 +106,7 @@ $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($
     }
 }
 ?>
-<br><a class='button' href="admin_senarai_item.php">Ke Senarai Item &#10145</a> <br><br>
+<a class='button' href="admin_senarai_item.php">Ke Senarai Item &#10145</a> <br><br>
 <table align='center' width='100%' border='1' cellspacing='0' cellpadding='5'>
     <tr>
         <td valign='top'>
@@ -146,7 +146,7 @@ $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($
         ?>
         </select>
         </p>
-        <h3>Kriteria Perbandingan</h3>
+        <h3><u>Kriteria Perbandingan</u></h3>
         <p>
             <label><?php echo $label_b1; ?></label><br>
             <input type='text' name='banding1' value='<?php echo $banding1;  ?>' autocomplete="off"><br>
@@ -165,7 +165,7 @@ $result = mysqli_query($db, $sql) OR die("Ralat:<pre>$sql</pre>". mysqli_error($
     </form>
 </td>
 <td valign='top' align='center'>
-<h3>Gambar Item</h3>
+<h3><u>Gambar Item</u></h3>
 <?php
 # Paparkan gambar jika ada semasa edit item
 if($edit_data){
@@ -173,8 +173,8 @@ echo $gambar;
 ?>
 <form method='POST' action='' enctype='multipart/form-data'>
     <p>
-        <label for='gambar'>Muat-naik Gambar</label><br>
-        <input type="file" name='gambar' id='gambar'>
+        <label for='gambar'>Muat-naik Gambar</label>
+        <pre><input type="file" name='gambar' id='gambar'></pre>
     </p>
     <p>
         <input type='submit' value='Upload'>

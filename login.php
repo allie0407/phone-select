@@ -15,9 +15,9 @@ if(isset($_POST['username'])&& isset($_POST['password'])){
             $_SESSION['namapengguna']=$row['namapengguna'];
             if($row['level']=='admin'){
                 $_SESSION['level']='admin';
-            }else{
+            }else
                 $_SESSION['level']='user';
-            }
+            
             echo"<script>alert('Log masuk berjaya.');
             window.location.replace('index.php');
             </script>";
@@ -30,7 +30,7 @@ if(isset($_POST['username'])&& isset($_POST['password'])){
 ?>
 <table width='400' height='100%' align='center'>
     <tr><td align='center'>
-        <br><h2>Log Masuk</h2>
+        <h2>Log Masuk</h2>
         <p>Jika anda belum mempunyai akaun, klik <a href='daftar.php'>Daftar</a>.</p>
         <form method="POST" action=''>
             <label>Username</label><br>
